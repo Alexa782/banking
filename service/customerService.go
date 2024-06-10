@@ -4,7 +4,6 @@ import (
 	"github.com/ashishjuyal/banking/domain"
 	"github.com/ashishjuyal/banking/dto"
 	"github.com/ashishjuyal/banking/errs"
-	"github.com/ashishjuyal/banking/logger"
 )
 
 //"github.com/ashishjuyal/banking/dto"
@@ -27,7 +26,6 @@ func (s DefaultCustomerService) GetAllCustomer(status string) ([]domain.Customer
 	} else {
 		status = ""
 	}
-	logger.Info("status service:" + status)
 	return s.repo.FindAll(status)
 }
 
